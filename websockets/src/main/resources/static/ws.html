@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.addEventListener('load', function(e){
+        var ws = new WebSocket('ws://localhost:8080/ws/greetings');
+        ws.addEventListener('open', function(e){
+            ws.send('Livelessons Fans');
+        });
+        ws.addEventListener('message', function(e){
+            console.log(e.data);
+        });
+    });
+</script>
+</body>
+</html>
